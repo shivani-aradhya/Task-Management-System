@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'wtasks/base.html' %}
+{%block child_block%}
+<div class="container" align="center">
+    <h3>About Employees</h3>
+    <table border ="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Assigned Task</th>
+                <th>Task Status</th>
+                <th>Salary</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        {%for employee in employees%}
+        <tr>
+             
+             <td>{{employee.Name}}</td> 
+             <td>{{employee.Assigned_Task}}</td>
+             <td>{{employee.Task_Status}}</td>
+             <td>{{employee.Salary}}</td> 
+             <td><a href="/update/{{employee.id}}" class= "btn btn btn-success"> Update
+            </a>
+                 <a href="/delete/{{employee.id}}" class= "btn btn btn-danger"> Delete
+             </a>
+            </td>     
+        
+        
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{%endblock%}

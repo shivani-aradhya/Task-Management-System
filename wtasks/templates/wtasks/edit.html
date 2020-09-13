@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{%extends 'wtasks/base.html' %}
+{%block child_block%}
+<div class="container" align = "center">
+    <h3>Update Records</h3>
+    <form method="POST">
+        {%csrf_token%}
+        Name: <input type="text" name= 'Name' value ={{employee.Name}}><br>
+        Assigned_Task: <input type="text" name= 'Assigned_Task' value ={{employee.Assigned_Task}}><br>
+        Task_Status: <input type="number" name= 'Task_Status' value ={{employee.Task_Status}}><br>
+        Salary: <input type="number" name= 'Salary' value ={{employee.Salary}}><br>
+        <input type ="submit" value ="Update Record" name ="">
+    </form>
+</div>
+
+{%endblock%}
